@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "a6108cc6-7039-4fbc-9ad2-bc615cbe27e8",
+		"name": "Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30258393"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Users List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJhN2NhM2IwYjk1YTIyZWJhNGM3ZDkiLCJlbWFpbCI6InJhbmFub29yQGVtYWlsLmNvbSIsImlhdCI6MTcwNjcyMDY4MCwiZXhwIjoxNzA2NzIwOTgwfQ.WCL8kkLJeQbv7inmq8CwBlxd1mCc089KqGLUERSQ-9s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/users/?platform=facebook",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "platform",
+									"value": "facebook"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJhN2NhM2IwYjk1YTIyZWJhNGM3ZDkiLCJlbWFpbCI6InJhbmFub29yQGVtYWlsLmNvbSIsImlhdCI6MTcwNjcyMDQyOSwiZXhwIjoxNzA2NzIwNzI5fQ.G_b9v0bEQGEw4cUFjSIZ7ry1N82-pn_8V6txy_fTnug",
+								"type": "text"
+							}
+						],
+						"url": "localhost:8080/users/65ba26f7d627fe57b6c165f3"
+					},
+					"response": []
+				},
+				{
+					"name": "Create/SIgnup User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Noor Imran\",\n    \"email\" : \"rananoor@email.com\",\n    \"password\" : \"!Qwerasdf123\",\n    \"platform\" : \"instagram\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/users/"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJhN2NhM2IwYjk1YTIyZWJhNGM3ZDkiLCJlbWFpbCI6InJhbmFub29yQGVtYWlsLmNvbSIsImlhdCI6MTcwNjcyMDQyOSwiZXhwIjoxNzA2NzIwNzI5fQ.G_b9v0bEQGEw4cUFjSIZ7ry1N82-pn_8V6txy_fTnug",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"John Doe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/users/65ba26f7d627fe57b6c165f3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"65ba26f7d627fe57b6c165f3"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "facebook",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJhNzAyNjRjMmUwYWJlODExOWE1ZmUiLCJlbWFpbCI6InJhbmFAZW1haWwuY29tIiwiaWF0IjoxNzA2NzE5NjI5LCJleHAiOjE3MDY3MjMyMjl9.Gk4LuCs3ASqiYByFaVmI0mZGIIwr1rPWgQv63n1d13I",
+								"type": "text"
+							}
+						],
+						"url": "localhost:8080/users/65ba26f7d627fe57b6c165f3"
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"rananoor@email.com\",\n    \"password\": \"!Qwerasdf123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/users/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJhN2NhM2IwYjk1YTIyZWJhNGM3ZDkiLCJlbWFpbCI6InJhbmFub29yQGVtYWlsLmNvbSIsImlhdCI6MTcwNjcyMDQyOSwiZXhwIjoxNzA2NzIwNzI5fQ.G_b9v0bEQGEw4cUFjSIZ7ry1N82-pn_8V6txy_fTnug",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"65ba3694486bb67393145ed1\",\n    \"platform\": \"linkedin\",\n    \"privacy\": \"private\",\n    \"description\": \"A post by the owner of profile\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/posts/"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJhN2NhM2IwYjk1YTIyZWJhNGM3ZDkiLCJlbWFpbCI6InJhbmFub29yQGVtYWlsLmNvbSIsImlhdCI6MTcwNjcyMDY4MCwiZXhwIjoxNzA2NzIwOTgwfQ.WCL8kkLJeQbv7inmq8CwBlxd1mCc089KqGLUERSQ-9s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"privacy\": \"friends\",\n    \"description\": \"A post by the owner of profile updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/posts/65ba4471ef9fa0e952f28072"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Posts LIst",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJhN2NhM2IwYjk1YTIyZWJhNGM3ZDkiLCJlbWFpbCI6InJhbmFub29yQGVtYWlsLmNvbSIsImlhdCI6MTcwNjcyMDQyOSwiZXhwIjoxNzA2NzIwNzI5fQ.G_b9v0bEQGEw4cUFjSIZ7ry1N82-pn_8V6txy_fTnug",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/posts/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"posts",
+								""
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "65ba3694486bb67393145ed1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Post",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJhN2NhM2IwYjk1YTIyZWJhNGM3ZDkiLCJlbWFpbCI6InJhbmFub29yQGVtYWlsLmNvbSIsImlhdCI6MTcwNjcyMDQyOSwiZXhwIjoxNzA2NzIwNzI5fQ.G_b9v0bEQGEw4cUFjSIZ7ry1N82-pn_8V6txy_fTnug",
+								"type": "text"
+							}
+						],
+						"url": "localhost:8080/posts/65ba446aef9fa0e952f28070"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWJhN2NhM2IwYjk1YTIyZWJhNGM3ZDkiLCJlbWFpbCI6InJhbmFub29yQGVtYWlsLmNvbSIsImlhdCI6MTcwNjcyMDQyOSwiZXhwIjoxNzA2NzIwNzI5fQ.G_b9v0bEQGEw4cUFjSIZ7ry1N82-pn_8V6txy_fTnug",
+								"type": "text"
+							}
+						],
+						"url": "localhost:8080/posts/65ba446aef9fa0e952f28070"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
